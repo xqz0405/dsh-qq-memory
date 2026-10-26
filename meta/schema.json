@@ -1,0 +1,8 @@
+{
+  "version": 1,
+  "kind": "dsh-qq-memory",
+  "layers": {
+    "short": "persona-memory MEMORY/USER/STANDING/failures/projects-memory",
+    "long": "plain JSONL DSH session archives, digests, index"
+  }
+}

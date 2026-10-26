@@ -1,0 +1,15 @@
+# dsh-qq-memory — never commit secrets or derived/transient state
+*.sqlite
+*.sqlite-*
+*.db
+*.db-*
+*.log
+*.pid
+*.tmp
+.env
+qqbot.env
+node_modules/
+media/
+logs/
+conflicts/
+*.jsonl.zstd.tmp-*
