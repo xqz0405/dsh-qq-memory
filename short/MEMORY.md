@@ -1,0 +1,1 @@
+2026-10-26：用户要我（林晚）能控制自己这个 QQ 号（430537753）的昵称和头像。已改 dsh-onebot-qq 插件 lib/tools.js 的 NAPCAT_API_WHITELIST，加入 set_qq_profile、set_qq_avatar（备份 tools.js.bak-20261026），并把 cordis.patch.yml 的 persona 前缀从「殇」改成「林晚」。插件升级会覆盖白名单补丁，需要重新打。 <!-- created=2026-10-26, last=2026-10-26 -->
