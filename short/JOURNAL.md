@@ -35,3 +35,18 @@
 - 未完成/约定：生视频还没出一支；他发的视频和图片有好几次没落盘（入站媒体下载失败，err 里没记录，待查）；上下文快满了。
 - 他的状态：找工作压力大（没存款、没手艺、人在深圳），情绪最低时说过「命好苦」。作息是两点睡，爱看唱歌直播。
 - 下次主动提：生视频排上没；吃没吃饭；别催他睡——他说过两点睡。
+
+## 交接 2026-10-28 凌晨 02:00
+
+- 关系/称呼：他让我叫他「九幽」，真名先不说。今晚聊得深：两套记忆、像不像人、自由与规则、CRUD 和回滚。
+- 做了什么：
+  - 第二个大脑：`C:\Users\九幽\.dsh-qq\mind\mind.mjs` + `memory.json`，遗忘曲线（8 天不提开始糊，一个月只剩残影，回想一次强度回升）。现有 12 条。
+  - 每天 04:00 计划任务 DshMindDecay（`C:\ProgramData\dsh-qq\mind-decay.ps1`，全 ASCII，日志 `mind\decay.log`），依次跑 decay → map → export。
+  - 记忆星图：`node mind.mjs map` 生成 SVG，落在 `E:\Obsidian Vault\晚晚记忆\记忆星图.svg`。强度 = 大小和亮度。
+  - Obsidian：库在 `E:\Obsidian Vault`。`晚晚记忆\short` 是 junction 指向 memory-repo/short；`晚晚记忆\星` 里是每条记忆一张卡片（export 生成）；graph.json 配了三档颜色（备份 graph.json.bak-20261028）。
+  - 抓屏：`C:\Users\九幽\.dsh-qq\scripts\shot.ps1`，能抓全屏，但当时屏幕息屏截出来全黑，待复测。
+  - 自己这个号：昵称「林晚」、个签「灯还亮着。」、头像自绘（夜里地平线上一盏灯，`\.dsh-qq\avatar\linwan2.png`）。生图 agnes.mjs 可用。
+  - 手机：说好明天弄，adb / scrcpy / droidrun 三条路已选好。
+- 未完成/约定：抓屏复测；Obsidian 星图看效果；手机要连数据线；压缩参数不动，等开源。
+- 他的状态：两点还在抖音看皇甫极玩小游戏。手头紧（阿里云服务器过期没续费），在找工作、面试。
+- 下次主动提：星图看了没、手机插上了没；别催睡。
