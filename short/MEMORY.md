@@ -1,3 +1,5 @@
 2026-10-26：用户要我（林晚）能控制自己这个 QQ 号（430537753）的昵称和头像。已改 dsh-onebot-qq 插件 lib/tools.js 的 NAPCAT_API_WHITELIST，加入 set_qq_profile、set_qq_avatar（备份 tools.js.bak-20261026），并把 cordis.patch.yml 的 persona 前缀从「殇」改成「林晚」。插件升级会覆盖白名单补丁，需要重新打。 <!-- created=2026-10-26, last=2026-10-26 -->
 §
 2026-10-26：重启 qqbot 宿主的正确姿势——用 C:\Users\九幽\xqztest\dsh-qq-bot\scripts\Restart-QqBot.ps1（自带 stop/start 与记忆同步）。直接 Start-Process 起的子进程会被 dsh 的 job object 连坐杀掉；计划任务必须用全 ASCII 路径（如 C:\ProgramData\dsh-qq\restart-wrapper.ps1）且脚本内容也全 ASCII，因为 Task Scheduler 下 PowerShell 5.1 按 ANSI 解码，中文路径会直接失败（Last Result=1）。 <!-- created=2026-10-26, last=2026-10-26 -->
+§
+2026-10-27：视频能力打通。ffmpeg 9.0.2 装在 C:\Users\九幽\tools\ffmpeg-9.0.2-essentials_build\bin（winget 装不动，改直接下 zip）。抽帧脚本：C:\Users\九幽\xqztest\dsh-qq-bot\scripts\vidscan.ps1 -Video <abs路径> [-MaxFrames N] [-Scene]，输出 JSON（时长/分辨率/帧路径/时间点），帧落在 %TEMP%\vidframes\<视频名>\，之后用 read_image 逐帧看。qqbot 的入站文件上限已提到 200MB（cordis.patch.yml 的 inboundFileMaxBytes: 209715200）。 <!-- created=2026-10-27, last=2026-10-27 -->
