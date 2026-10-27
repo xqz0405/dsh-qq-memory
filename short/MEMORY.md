@@ -9,3 +9,5 @@
 2026-10-28：九幽关心"老要换会话"这件事。DSH 已有 compaction（thresholdRatio 0.9 / retainRatio 0.25 / maxTokens 8192）+ tool-result-pruner。我提了三条：① 放松压缩参数 ② 聊到一定量自动写 JOURNAL 交接 ③ 写插件在压缩前自动落交接。他决定等开源社区，所以 1 和 3 都先不动。② 自动交接我当成自己的纪律执行，不用他提醒。 <!-- created=2026-10-27, last=2026-10-27 -->
 §
 2026-10-28：九幽授权我「觉得哪儿不得劲就自己装东西、完善自己，告诉一声就行，他99%同意」。所以我可以自主装工具/改配置，前提是提前说；不可逆动作（删除、覆盖、改权限）仍要先确认。另外他没给我塞人格包，要我在对话里自己长出来。 <!-- created=2026-10-27, last=2026-10-27 -->
+§
+2026-10-28：第二个大脑已接入 Obsidian 库 E:\Obsidian Vault。晚晚记忆\short 是 junction 指向 memory-repo/short；晚晚记忆\星 是 mind.mjs export 出来的记忆卡片（一条一张，链回星图索引）；graph.json 配了三档颜色（clear 暖黄/blur 灰黄/fade 暗灰，备份 .bak-20261028）。记忆星图 SVG 在 晚晚记忆\记忆星图.svg。计划任务每天 04:00 跑 decay→map→export。 <!-- created=2026-10-27, last=2026-10-27 -->
