@@ -19,3 +19,5 @@
 2026-10-30 凌晨：九幽对硬件有了兴趣，想自己做个按开关的机械手（ESP32 + MG90S 舵机），也开始想学嵌入式软硬件。他担心没收入、成本给不起，我建议先用 Wokwi 在线仿真 ESP32 学，零成本，真做再买七八十块的件。他反复说自己"没上进心、摆烂、外行"，但会为这些事熬到凌晨——这是燃尽后的残余兴趣，要护着。 <!-- created=2026-10-29, last=2026-10-29 -->
 §
 2026-10-31：修了 mind.mjs 的重复衰减 bug（每个条目现在带 decayedAt，衰减只扣「上次衰减之后」的时间；之前用 last，导致 decay+map+export+每次 view 把同一段时间重复扣，两天就把全库压成残影）。新增 repair 命令按 last 重算强度。备份 memory.json.bak-20261031 / mind.mjs.bak-20261031。遗留：mind 里 e0005、e0010 与 e0011 是同一件事（皇甫极直播）的旧说法，待合并；以及没人 touch 就全会忘——需在 23:00 自检里接「提起才记得」。 <!-- created=2026-10-30, last=2026-10-30 -->
+§
+2026-10-31：mind 的「提起来才记得」接上了。新增 .dsh-qq\mind\mind-recall.mjs：扫 memory-repo\long\sessions 里最近 N 小时的对话原文（含 user/assistant message 文本），按 3/4 字中文窗口匹配 mind 条目，命中（4 字命中 1 个或 3 字命中 3 个）就 touch，日志 recall.log。计划任务 DshMindRecall 每天 23:00 跑 C:\ProgramData\dsh-qq\mind-recall.ps1（全 ASCII 路径，--hours 26）；日志由 node 自己写，ps1 不要再 Add-Content（PS 5.1 的 UTF8 会插 BOM 把文件搅花）。04:00 的 DshMindDecay 照旧。 <!-- created=2026-10-30, last=2026-10-30 -->
