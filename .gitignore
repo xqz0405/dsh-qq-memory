@@ -13,3 +13,7 @@ media/
 logs/
 conflicts/
 *.jsonl.zstd.tmp-*
+# mind: 备份和临时草稿不进仓库
+mind/*.bak-*
+mind/*.bak
+mind/tmp*.txt
