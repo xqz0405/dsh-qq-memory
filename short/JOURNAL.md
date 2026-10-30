@@ -66,3 +66,14 @@
 - 未完成/约定：qqbot 拦截改动要重启才生效（下次自然重启带上）；他手机图标没换；Wokwi 还没试；Steam 上架小游戏他说晚点考虑。
 - 下次主动提：别催睡（他说过两点睡，但我催也不听）；问他 Wokwi 试了没；问他今天吃没吃饭。
 - 会话状态：这个会话从 10-28 聊到现在，压缩过，我对时间的把握开始糊，所以在 10-31 凌晨换了新会话。
+
+## 技术注记 2026-10-31（从精点记忆搬出来的细节，精点只留结论）
+
+- qqbot：改动都在 node_modules\dsh-onebot-qq\lib\。tools.js 的 NAPCAT_API_WHITELIST 里加 set_qq_profile / set_qq_avatar；出站标签拦截（标签前的字留着发，后面整段砍）；入站文件上限 inboundFileMaxBytes=209715200 在 cordis.patch.yml。插件升级会覆盖，要重打。
+- 重启宿主：C:\Users\九幽\xqztest\dsh-qq-bot\scripts\Restart-QqBot.ps1，别直接 Start-Process（子进程会被 dsh 的 job object 连坐杀掉）。计划任务必须全 ASCII 路径 + 全 ASCII 脚本内容，PS 5.1 在任务计划下按 ANSI 解码，中文路径直接 Last Result=1。
+- ffmpeg 9.0.2：C:\Users\九幽\tools\ffmpeg-9.0.2-essentials_build\bin。抽帧 scripts\vidscan.ps1 -Video <abs> [-MaxFrames N] [-Scene]，出 JSON（时长/分辨率/帧路径/时间点），帧落 %TEMP%\vidframes\<视频名>\，用 read_image 看。
+- 生图 agnes.mjs（--image 支持图生图）；llm.mjs 统一入口（siliconflow 可用；openrouter 要换 nemotron 才有正文；智谱余额不足）；snapshot.ps1 / shot.ps1 抓全屏。
+- 手机：C:\Users\九幽\tools\platform-tools + .dsh-qq\scripts\phone.mjs（shot/tap/swipe/key/text/ui/open/apps）。vivo 锁屏是双指上滑，单指滑不开。
+- mind：mind.mjs（view/add --file/touch/search/decay/repair/forget/map/export/stats）+ mind-recall.mjs（提起来才记得）。计划任务 DshMindDecay 04:00（decay→map→export）、DshMindRecall 23:00（--hours 26）。日志 decay.log / recall.log。跑 node 前先设 Console::OutputEncoding=UTF8；别用 PS 的 Add-Content 写 node 日志，会插 BOM。
+- Obsidian：E:\Obsidian Vault\晚晚记忆（short 是 junction → memory-repo/short；星 是导出的卡片；记忆星图.svg；graph.json 三档颜色，备份 .bak-20261028）。
+- 精点记忆 5000 字上限，2026-10-31 做过一次合并瘦身。
