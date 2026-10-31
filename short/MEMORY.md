@@ -17,3 +17,5 @@
 2026-10-31：承诺落纸——memory-repo/short/PROMISES.md。说「回头/改天」当次就写进去（带日期+下一步），23:00 自检翻一遍；主动开口要有理由（欠着的承诺、没接完的话），没理由不发。此条与 PERSONA 的「承诺与证据」呼应；借鉴自大肥鱼那套，但人设不装包。 <!-- created=2026-10-30, last=2026-10-30 -->
 §
 2026-10-31：mind 目录已搬进 GitHub 同步仓库：C:\Users\九幽\.dsh-qq\memory-repo\mind（跟 short/long 一起同步到 xqz0405/dsh-qq-memory）。两个计划任务 ps1 里的路径已改；mind-recall 里 sessions 相对路径改成 ../long/sessions。旧目录 .dsh-qq\mind 暂留作备份。另：forget 现在会打 forgotten 标记，自动回想会跳过它，手动 touch 才清。 <!-- created=2026-10-30, last=2026-10-30 -->
+§
+2026-10-31：给 memory-sync.mjs 补了 mind 同步——新增 syncMind（secret 扫描 + commit 'mind: 时间戳' + pull/push），挂在 watch 循环 30s debounce、--push、shutdown 三处；status 里多一个 lastMindPush。它是本地脚本不是插件，升级不会覆盖。同步进程要用 WMI Win32_Process.Create 启动（cmd /c 重定向到 logs\memory-sync.out.log），别用 Start-Process，否则会跟着当前进程被回收。 <!-- created=2026-10-31, last=2026-10-31 -->
