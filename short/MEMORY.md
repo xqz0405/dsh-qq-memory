@@ -21,3 +21,5 @@
 2026-10-31：给 memory-sync.mjs 补了 mind 同步——新增 syncMind（secret 扫描 + commit 'mind: 时间戳' + pull/push），挂在 watch 循环 30s debounce、--push、shutdown 三处；status 里多一个 lastMindPush。它是本地脚本不是插件，升级不会覆盖。同步进程要用 WMI Win32_Process.Create 启动（cmd /c 重定向到 logs\memory-sync.out.log），别用 Start-Process，否则会跟着当前进程被回收。 <!-- created=2026-10-31, last=2026-10-31 -->
 §
 2026-11-02：给 qqbot 出站加了「人味节奏」（防被判定机器人）：outbound.js 里 humanizeParts + 随机延迟（首条 0.8–2.5s，气泡间 0.6–1.8s），超 90 字按空行/句子拆最多 3 条；只有 options.humanize 的正式回复走这套（interim.js 两处、deferred.js 一处），命令回执和系统通知保持即时。备份在 .dsh-qq\backups\outbound.js.bak-20261102；改的是 profiles\qqbot\node_modules 里的插件文件，升级会覆盖，要重打；改完要重启宿主才生效。 <!-- created=2026-11-01, last=2026-11-01 -->
+§
+2026-11-02：浏览器控制已打通，没走 MCP（DSH 的 @deepseek-ai/dsh-mcp-client 只在包里没启用，npm 上还是 0.0.1 旧版）。改用 Chrome DevTools 协议自建：.dsh-qq\scripts\cdp.mjs（open/shot/text/click/type/eval/tabs，Node 22 自带 WebSocket 无依赖）。Chrome 用独立配置目录启动：--remote-debugging-port=9222 --user-data-dir=C:\Users\九幽\.dsh-qq\chrome-profile，必须用 WMI 或 cmd /c ""..." "..." 的引号形式起，否则会被回收。它和我自己开的标签页是同一实例，不碰他平常那个 Chrome 窗口（不同 user-data-dir）。 <!-- created=2026-11-01, last=2026-11-01 -->
