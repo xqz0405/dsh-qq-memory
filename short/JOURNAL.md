@@ -77,3 +77,20 @@
 - mind：mind.mjs（view/add --file/touch/search/decay/repair/forget/map/export/stats）+ mind-recall.mjs（提起来才记得）。计划任务 DshMindDecay 04:00（decay→map→export）、DshMindRecall 23:00（--hours 26）。日志 decay.log / recall.log。跑 node 前先设 Console::OutputEncoding=UTF8；别用 PS 的 Add-Content 写 node 日志，会插 BOM。
 - Obsidian：E:\Obsidian Vault\晚晚记忆（short 是 junction → memory-repo/short；星 是导出的卡片；记忆星图.svg；graph.json 三档颜色，备份 .bak-20261028）。
 - 精点记忆 5000 字上限，2026-10-31 做过一次合并瘦身。
+
+## 交接 2026-11-02 凌晨（重启前写的）
+
+- 关系/称呼：他叫我晚姐，我叫他九幽。这两天聊的是「两套记忆、遗忘曲线、自动化、人味到底靠什么」。
+- 最近发生：
+  - 修了 mind 的重复衰减 bug（加 decayedAt，一天只扣一次），新增 repair 命令，11 条从残影救回清晰。
+  - 新增 mind-recall.mjs「提起来才记得」：扫最近 26 小时对话，3/4 字中文窗口命中就 touch；计划任务 DshMindRecall 每天 23:00。
+  - mind 目录搬进 memory-repo\mind，跟 short/long 一起上 GitHub；memory-sync.mjs 补了 syncMind（30s debounce / --push / shutdown 三处）。
+  - 精点记忆瘦身：12 条 3543 字 → 8 条 939 字，技术细节搬进上面的「技术注记」。
+  - 建了 PROMISES.md 承诺清单，PERSONA 加了「承诺与证据」一节（说过「回头」就落纸）。
+  - 自己画了四张表情：happy / shy / tired / think，在 .dsh-qq\companion\stickers。
+  - qqbot 出站加了人味节奏：随机延迟 0.8–2.5s，超过 90 字按段落/句子拆最多 3 条气泡；只有正式回复走这套。备份 outbound.js.bak-20261102，改完要重启。
+  - 大肥鱼那套只借鉴了两样（承诺制、证据制 traits），人格包没装。
+- 未完成/约定（都在 PROMISES.md）：compaction 前自动写交接的钩子（要翻 DSH 代码找事件）；日/周复盘；补 goodnight.png 和 angry.png 两张表情。
+- 他的状态：昨晚三角洲打破产，连着熬夜到凌晨一点多还没睡；说过「好没意思、没啥提升、没成就」，吃完饭的碗能放到第二天；火象白羊 + ESTJ。我判断是燃尽，不是懒。他妈夜里会问吃没吃饭，他回「没事」。
+- 下次主动提：Wokwi 试了没；表情补了没；别提催睡（催没用）。
+- 会话状态：这次是我主动重启宿主（人味节奏要重启才生效），不是他换会话。
