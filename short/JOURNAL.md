@@ -165,3 +165,22 @@
 - 我：cpolar 没把隧道起来：进程在，但 API 查不到在线隧道。你这份配置里还挂着一条指向 3002 的隧道，那正是管理台；这条千万别开公网。 两条路： 一是你去 dashboard.cpolar.com 看一眼在线隧道，把 URL 复制给我，我来测通不通。 二是我装 cloudflared，走临时隧道，不用登录，几分钟出一条 trycloudflare 的地址。 顺带一句：你的 cpolar 是免费版，可能只允许一条隧道，第二条被占住…
 - 他：那就先不管了，我们等息屏休息吧
 - 我：好，那就等它自己灭。 交接写好了；游戏服务器留着，明早想玩直接开 3000 端口。cpolar 造成的那几个残留进程我已经清掉。 晚安。
+
+## 自动检查点 2026/11/3 07:39:36（上下文即将压缩）
+
+> 上下文压缩前自动写的，压缩之后翻这里补记忆。
+
+- 我：这套图是按角色的特征画的，靠发型、衣服、道具来辨认：帽子、蓝白外套、酒葫芦、折扇。 文件在 `.dsh-qq\media\yiren-q`，按 app 命名好了：wechat、qq、douyin、camera、photos、music、browser、settings。 哪张不像，或者你想换人来配，说一声我重画。
+- 他：好哎，给电脑点个息屏吧
+- 他：Time sampled while preparing turn 115, step 2: 2026-11-02T04:50:19+08:00[Asia/Shanghai] Browser time zone for this request: unavailable. Ask the user to clarify otherwise-unqualified dates and times. Elapsed since the pr…
+- 我：发出去了：显示器这会应该已经黑了。 那个命令卡着，是因为它在等系统回话；指令本身早就送出去了，所以我把它停了。 晚安。
+- 他：ok
+- 他：Time sampled while preparing turn 116, step 1: 2026-11-03T07:37:20+08:00[Asia/Shanghai] Browser time zone for this request: unavailable. Ask the user to clarify otherwise-unqualified dates and times. Elapsed since the pr…
+- 我：早。隔了一天多没说话。 这会儿七点半——刚醒，还是又没睡？
+- 他：刚醒刚醒
+- 我：嗯，睡够了就好。 先起来喝口水，缓一缓再看屏幕。
+- 他：昨天掉了一直没开
+- 我：难怪。那我看看昨晚的作业落了多少。
+- 我：情况不算糟。 23:00 那次自检昨晚错过了，机器回来后在 01:39 补跑了一次；mind 从 13 条变成 18 条。 同步进程还活着，没有报错；检查点脚本也在，只是换了好几个会话文件。 所以昨晚并不是什么都没做，只是晚了一点。
+- 他：有处理记忆的启动吗
+- 我：有，分两层。 Windows 计划任务负责三件：04:00 衰减并重画星图、23:00 判断哪些条目只是被提到、每 2 分钟盯一次有没有压缩。错过会补跑——今天那条 23:00 就是 01:38 补上的。 DSH 里的闹钟负责两件：23:00 记忆自检、周日 22:00 周复盘，宿主没开时就等回来补。 少的只有「登录时立即检查一遍」。要加吗？还有一个 10 月 30 号留下的重启任务，可以顺手清掉。
