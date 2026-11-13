@@ -38,7 +38,9 @@ function applyDecay(db, t = now()) {
     e.decayedAt = t;
     const before = e.s;
     const f = Math.exp(-dt / tau(e));
-    e.s = Math.min(e.w, e.s * f);
+    // 重要的事（w >= 0.85）会糊，但不会消失：留一层 0.35 的底。
+    const floor = e.w >= 0.85 ? 0.35 : 0;
+    e.s = Math.max(floor, Math.min(e.w, e.s * f));
     if (e.s < 0.2) e.state = 'fade';
     else if (e.s < 0.45) e.state = 'blur';
     else e.state = 'clear';
